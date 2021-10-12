@@ -1,5 +1,5 @@
 
-videofile = '/home/wang/Documents/MATLAB/Azibo_HR_1.mp4';
+videofile = 'test.mp4';
 starttime = 0;
 duration = 10;
 calcu_time = 9;
