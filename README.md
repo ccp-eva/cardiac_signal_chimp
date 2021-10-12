@@ -14,7 +14,8 @@
 * Run the `test1` MATLAB script.   
    `>> test1`
 * First frame of the video will popup; select the object to track.
-* The tracker script will show subsequent frames with appropriate bounding boxes.
+* The running script will show videos with the selected bounding boxes.
+* After processing the video, the heartrate will print out in Matlab terminal.
 
 ## Output
 
