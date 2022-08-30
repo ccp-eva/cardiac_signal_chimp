@@ -1,4 +1,4 @@
-# caridac_signal_chimp
+# cardiac_signal_chimp
 
 
 ## Dependencies
