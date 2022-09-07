@@ -10,9 +10,9 @@
 
 * Start MATLAB and navigate to project directory.
 * Navigate to `src/` directory.   
-   `>> cd src`
+   `cd src`
 * Run the `test1` MATLAB script.   
-   `>> test1`
+   `test1`
 * First frame of the video will popup; select the object to track.
 * The running script will show videos with the selected bounding boxes.
 * After processing the video, the heartrate will print out in Matlab terminal.
