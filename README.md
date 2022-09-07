@@ -1,9 +1,13 @@
 # cardiac_signal_chimp
 
+## Introduction
+
+This repository aims at computing heart rate signal from RGB images.
 
 ## Dependencies
 
 * MATLAB
+* MATLAB Image Processing Toolbox
 * MATLAB Computer Vision Toolbox
 
 ## How to run
@@ -20,8 +24,6 @@
 ## Output
 
 ![output](https://user-images.githubusercontent.com/47135040/136742551-daf68be5-6ed4-4856-bb2a-5e586f767359.gif)
-
-
 
 ## License
 
