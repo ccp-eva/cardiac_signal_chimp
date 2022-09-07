@@ -11,6 +11,8 @@ This repository aims at computing heart rate signal from RGB images.
 * MATLAB Computer Vision Toolbox
 * MATLAB Signal Processing Toolbox
 
+Matlab is a scientific licensed software that may be used for data acquisition, processing, and computation. The software is available on the [Matlab homepage](https://www.mathworks.com/products/matlab.html). The Max Planck Digital Library provides Matlab licence for MPI staff: see [this page from an MPI network](https://www.soli.mpdl.mpg.de/de/software/matlab/activation-key/). You license needs to be activated with a MathWorks Account linked to your MPI email. The dependencies can be downloaded from the installer or from the MATLAB software using the Adds-On button.
+
 ## How to run
 
 * Start MATLAB and navigate to project directory.
