@@ -4,7 +4,7 @@
 ## Dependencies
 
 * MATLAB
-* MATLAB Vision Toolbox
+* MATLAB Computer Vision Toolbox
 
 ## How to run
 
