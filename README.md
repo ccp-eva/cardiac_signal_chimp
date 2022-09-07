@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository aims at computing heart rate signal from RGB images.
+This repository aims at computing the heart rate signal from RGB images. A Region of Interest (ROI) needs to be defined on the face region.
 
 ## Dependencies
 
@@ -11,18 +11,18 @@ This repository aims at computing heart rate signal from RGB images.
 * MATLAB Computer Vision Toolbox
 * MATLAB Signal Processing Toolbox
 
-Matlab is a scientific licensed software that may be used for data acquisition, processing, and computation. The software is available on the [Matlab homepage](https://www.mathworks.com/products/matlab.html). The Max Planck Digital Library provides Matlab licence for MPI staff: see [this page from an MPI network](https://www.soli.mpdl.mpg.de/de/software/matlab/activation-key/). You license needs to be activated with a MathWorks Account linked to your MPI email. The dependencies can be downloaded from the installer or from the MATLAB software using the Adds-On button.
+**Matlab** is a scientific licensed software that may be used for data acquisition, processing, and computation. The software is available on the [Matlab homepage](https://www.mathworks.com/products/matlab.html). The Max Planck Digital Library provides **Matlab** licence for MPI staff: see [this page from an MPI network](https://www.soli.mpdl.mpg.de/de/software/matlab/activation-key/). This license must be activated with a MathWorks Account linked to an MPI email address. The dependencies can be downloaded from the installer or the MATLAB software using the Adds-On button.
 
 ## How to run
 
-* Start MATLAB and navigate to project directory.
+* Start **Matlab** and navigate to the project directory.
 * Navigate to `src/` directory.   
    `cd src`
-* Run the `test1` MATLAB script.   
+* Run the `test1` **Matlab** script.   
    `test1`
-* First frame of the video will popup; select the object to track.
-* The running script will show videos with the selected bounding boxes.
-* After processing the video, the heartrate will print out in Matlab terminal.
+* The first video frame will popup; select the ROI to track.
+* The running script will show the video with the selected bounding box.
+* After processing the video, the heart rate will print out in the **Matlab** terminal.
 
 ## Output
 
