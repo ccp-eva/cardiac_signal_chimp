@@ -9,6 +9,7 @@ This repository aims at computing heart rate signal from RGB images.
 * MATLAB
 * MATLAB Image Processing Toolbox
 * MATLAB Computer Vision Toolbox
+* MATLAB Signal Processing Toolbox
 
 ## How to run
 
