@@ -1,14 +1,11 @@
 
 videofile = 'test.mp4';
 starttime = 0;
-duration = 10;
-calcu_time = 9;
-FS = 25;
-fr = 25;
+duration = 20;
+calcu_time = 8;
 vidobj = VideoReader(videofile);
 vidobj.CurrentTime = starttime;
-
-FramesToRead = ceil(duration*vidobj.FrameRate);
+fps = vidobj.FrameRate; % or set it manually
 FN = 0;
 im = readFrame(vidobj);
 
@@ -44,13 +41,13 @@ for i = 1:N
 end
 eta = 0.125;
 
-num_frames = 0;0
-meanYIntensityLevels = zeros(1,calcu_time*fr);
+num_frames = 0;
+jsondata.hr = [];
+% meanYIntensityLevels = zeros(1,calcu_time*fps);
+meanYIntensityLevels = [];
 while hasFrame(vidobj) && (vidobj.CurrentTime <= starttime+duration)
     FN = FN+1;
-    T(FN) = vidobj.CurrentTime;
-    img = readFrame(vidobj);
-    
+    img = readFrame(vidobj);    
     im = img;
     
     if (size(img,3) == 3)
@@ -82,18 +79,29 @@ while hasFrame(vidobj) && (vidobj.CurrentTime <= starttime+duration)
     It=I(:,:,1);
     
     num_frames = num_frames+1;
-    meanYIntensityLevels(num_frames) = mean(mean(It));
-    if num_frames >= calcu_time*fr
+    meanYIntensityLevels = [meanYIntensityLevels, mean(mean(It))];
+%     meanYIntensityLevels(num_frames) = mean(mean(It));
+    if num_frames >= calcu_time*fps
         bb=meanYIntensityLevels;
         %save('signal.csv','bb')
-        heartrate = calHR(bb,num_frames,fr);
+        hr = calHR(bb,num_frames,fps);
         %disp(heartrate)
-        fprintf('Heartrate is %d\n',round(heartrate))
-        clear('meanYIntensityLevels')
+        fprintf('Heartrate is %d\n',round(hr))
+        % clear('meanYIntensityLevels')
         %meanYIntensityLevels = [];
-        num_frames = 0;
+        %num_frames = 0;
+        % trick to get in a loop
+        meanYIntensityLevels(1)=[];
+        num_frames = num_frames-1;
+        jsondata.hr = [jsondata.hr, hr];
     end
     % visualization
     result = insertShape(im, 'Rectangle', rect, 'LineWidth', 3);
     imshow(result);
 end
+
+fig=figure('Name','Evolution of the heartrate');
+jsondata.time = starttime+calcu_time : 1/fps : (length(jsondata.hr)-1)/fps+calcu_time;
+plot(jsondata.time,jsondata.hr);
+saveas(fig,sprintf('%s.pdf', videofile))
+saveJSONfile(jsondata,sprintf('%s.json', videofile))

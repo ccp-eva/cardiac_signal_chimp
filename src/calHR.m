@@ -1,10 +1,6 @@
-function [HR] = calHR(signal,num_frames,video_framerate)
+function [HR] = calHR(bb,No_of_frames,fr)
 %CALHR Summary of this function goes here
-%   Detailed explanation goes here
-fr = video_framerate;
-No_of_frames = num_frames;
-disp(No_of_frames)
-bb=signal;
+% disp(No_of_frames)
 
 %A=bb                                    
 %t = (1:No_of_frames)
@@ -40,8 +36,8 @@ BVP_F = filtfilt(B,A,(double(A1)));
 
 [a b]=size(modes);
 IMF1 = modes(1,:);%select IMF1 for cardiac signal
-disp(length(IMF1))
-disp(length(t1))
+% disp(length(IMF1))
+% disp(length(t1))
 [pks1,locs1] = findpeaks(IMF1,t1);
 Peaks_number1=  numel (pks1);
 HR=(Peaks_number1*60*fr)/No_of_frames;
